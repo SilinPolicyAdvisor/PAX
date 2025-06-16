@@ -59,7 +59,7 @@ export function FeatureCard({ icon, title, description, tag, className }: Featur
 
       <div className="flex items-center gap-2 mb-2">
         <h3 className="text-xl font-bold text-card-foreground">{title}</h3>
-        <span className="text-xs bg-primary/10 text-primary px-2 py-0.5 rounded-full">{tag}</span>
+        <span className="text-xs font-medium bg-[#16B2E4]/20 text-[#16B2E4] px-3 py-1 rounded-full border border-[#16B2E4]/30 whitespace-nowrap">{tag}</span>
       </div>
 
       <p className="text-muted-foreground">{description}</p>

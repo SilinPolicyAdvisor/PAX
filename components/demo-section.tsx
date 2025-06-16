@@ -19,14 +19,19 @@ export function DemoSection() {
                 Schedule a Demo Call
               </Button>
             </div>
-            <div className="bg-gray-100 dark:bg-gray-800 rounded-lg h-64 flex items-center justify-center relative overflow-hidden">
+            <div className="bg-gray-100 dark:bg-gray-800 rounded-lg overflow-hidden relative">
               <div className="absolute inset-0 neon-glow-subtle"></div>
-              <div className="relative z-10 p-4 text-center">
-                <p className="text-gray-500 dark:text-gray-400 text-sm">
-                  [Video: Split screen showing broker on video call with AI-tools interface, dashboard with analytics,
-                  quote comparisons, and chat interface visible]
-                </p>
-              </div>
+              <video 
+                className="w-full h-auto rounded-lg relative z-10" 
+                autoPlay
+                loop
+                muted
+                playsInline
+                preload="auto"
+              >
+                <source src="/vid.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
             </div>
           </div>
         </div>
