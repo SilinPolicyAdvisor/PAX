@@ -1,0 +1,501 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+    --primary: 0 0% 9%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Button hover effect */
+.btn-hover-effect {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-hover-effect::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+}
+
+.btn-hover-effect:hover::after {
+  transform: translateX(0);
+}
+
+/* Feature card hover effect */
+.feature-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Neon border effect that travels around the edges */
+@keyframes neon-border-travel {
+  0% {
+    background-image: linear-gradient(
+      90deg,
+      #16b2e4 0%,
+      rgba(22, 178, 228, 0.5) 20%,
+      transparent 30%,
+      transparent 70%,
+      rgba(216, 22, 113, 0.5) 80%,
+      #d81671 100%
+    );
+  }
+  25% {
+    background-image: linear-gradient(
+      180deg,
+      #16b2e4 0%,
+      rgba(22, 178, 228, 0.5) 20%,
+      transparent 30%,
+      transparent 70%,
+      rgba(216, 22, 113, 0.5) 80%,
+      #d81671 100%
+    );
+  }
+  50% {
+    background-image: linear-gradient(
+      270deg,
+      #16b2e4 0%,
+      rgba(22, 178, 228, 0.5) 20%,
+      transparent 30%,
+      transparent 70%,
+      rgba(216, 22, 113, 0.5) 80%,
+      #d81671 100%
+    );
+  }
+  75% {
+    background-image: linear-gradient(
+      360deg,
+      #16b2e4 0%,
+      rgba(22, 178, 228, 0.5) 20%,
+      transparent 30%,
+      transparent 70%,
+      rgba(216, 22, 113, 0.5) 80%,
+      #d81671 100%
+    );
+  }
+  100% {
+    background-image: linear-gradient(
+      90deg,
+      #16b2e4 0%,
+      rgba(22, 178, 228, 0.5) 20%,
+      transparent 30%,
+      transparent 70%,
+      rgba(216, 22, 113, 0.5) 80%,
+      #d81671 100%
+    );
+  }
+}
+
+@keyframes neon-border-travel-pink {
+  0% {
+    background-image: linear-gradient(
+      90deg,
+      #d81671 0%,
+      rgba(216, 22, 113, 0.5) 20%,
+      transparent 30%,
+      transparent 70%,
+      rgba(22, 178, 228, 0.5) 80%,
+      #16b2e4 100%
+    );
+  }
+  25% {
+    background-image: linear-gradient(
+      180deg,
+      #d81671 0%,
+      rgba(216, 22, 113, 0.5) 20%,
+      transparent 30%,
+      transparent 70%,
+      rgba(22, 178, 228, 0.5) 80%,
+      #16b2e4 100%
+    );
+  }
+  50% {
+    background-image: linear-gradient(
+      270deg,
+      #d81671 0%,
+      rgba(216, 22, 113, 0.5) 20%,
+      transparent 30%,
+      transparent 70%,
+      rgba(22, 178, 228, 0.5) 80%,
+      #16b2e4 100%
+    );
+  }
+  75% {
+    background-image: linear-gradient(
+      360deg,
+      #d81671 0%,
+      rgba(216, 22, 113, 0.5) 20%,
+      transparent 30%,
+      transparent 70%,
+      rgba(22, 178, 228, 0.5) 80%,
+      #16b2e4 100%
+    );
+  }
+  100% {
+    background-image: linear-gradient(
+      90deg,
+      #d81671 0%,
+      rgba(216, 22, 113, 0.5) 20%,
+      transparent 30%,
+      transparent 70%,
+      rgba(22, 178, 228, 0.5) 80%,
+      #16b2e4 100%
+    );
+  }
+}
+
+/* Traveling dot effect */
+@keyframes traveling-dot {
+  0%,
+  100% {
+    background-position: 0% 0%;
+  }
+  25% {
+    background-position: 100% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  75% {
+    background-position: 0% 100%;
+  }
+}
+
+/* Subtle neon border animations */
+@keyframes neon-border-subtle-blue {
+  0%,
+  100% {
+    box-shadow: 0 0 0 1px rgba(22, 178, 228, 0.3), 0 0 5px rgba(22, 178, 228, 0.2);
+    border: 1px solid rgba(22, 178, 228, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 0 1px rgba(22, 178, 228, 0.5), 0 0 8px rgba(22, 178, 228, 0.3);
+    border: 1px solid rgba(22, 178, 228, 0.8);
+  }
+}
+
+@keyframes neon-border-subtle-pink {
+  0%,
+  100% {
+    box-shadow: 0 0 0 1px rgba(216, 22, 113, 0.3), 0 0 5px rgba(216, 22, 113, 0.2);
+    border: 1px solid rgba(216, 22, 113, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 0 1px rgba(216, 22, 113, 0.5), 0 0 8px rgba(216, 22, 113, 0.3);
+    border: 1px solid rgba(216, 22, 113, 0.8);
+  }
+}
+
+@keyframes neon-border-subtle {
+  0%,
+  100% {
+    box-shadow: 0 0 0 1px rgba(119, 100, 171, 0.3), 0 0 5px rgba(119, 100, 171, 0.2);
+    border: 1px solid rgba(119, 100, 171, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 0 1px rgba(119, 100, 171, 0.5), 0 0 8px rgba(119, 100, 171, 0.3);
+    border: 1px solid rgba(119, 100, 171, 0.8);
+  }
+}
+
+/* Neon button glow */
+@keyframes neon-button-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 5px rgba(216, 22, 113, 0.5), 0 0 10px rgba(216, 22, 113, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 10px rgba(216, 22, 113, 0.7), 0 0 20px rgba(216, 22, 113, 0.5);
+  }
+}
+
+@keyframes neon-button-glow-blue {
+  0%,
+  100% {
+    box-shadow: 0 0 5px rgba(22, 178, 228, 0.5), 0 0 10px rgba(22, 178, 228, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 10px rgba(22, 178, 228, 0.7), 0 0 20px rgba(22, 178, 228, 0.5);
+  }
+}
+
+/* Apply animations to elements */
+.neon-border {
+  position: relative;
+  border-radius: inherit;
+  z-index: 0;
+}
+
+.neon-border::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 2px;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #16b2e4, #d81671, #16b2e4);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  background-size: 300% 300%;
+  animation: traveling-dot 8s linear infinite;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.neon-border::after {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  background: transparent;
+  z-index: -2;
+  box-shadow: 0 0 15px 2px rgba(22, 178, 228, 0.5);
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.neon-border-pink {
+  position: relative;
+  border-radius: inherit;
+  z-index: 0;
+}
+
+.neon-border-pink::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 2px;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #d81671, #16b2e4, #d81671);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  background-size: 300% 300%;
+  animation: traveling-dot 8s linear infinite;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.neon-border-pink::after {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  background: transparent;
+  z-index: -2;
+  box-shadow: 0 0 15px 2px rgba(216, 22, 113, 0.5);
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+/* Subtle versions */
+.neon-border-subtle-blue {
+  position: relative;
+  border-radius: inherit;
+  z-index: 0;
+}
+
+.neon-border-subtle-blue::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #16b2e4, rgba(22, 178, 228, 0.3), #16b2e4);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  background-size: 300% 300%;
+  animation: traveling-dot 6s linear infinite;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.neon-border-subtle-pink {
+  position: relative;
+  border-radius: inherit;
+  z-index: 0;
+}
+
+.neon-border-subtle-pink::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #d81671, rgba(216, 22, 113, 0.3), #d81671);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  background-size: 300% 300%;
+  animation: traveling-dot 6s linear infinite;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.neon-border-subtle {
+  position: relative;
+  border-radius: inherit;
+  z-index: 0;
+}
+
+.neon-border-subtle::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #16b2e4, #d81671, #16b2e4);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  background-size: 300% 300%;
+  animation: traveling-dot 8s linear infinite;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+/* Neon button glow */
+.neon-button {
+  position: relative;
+  overflow: visible;
+}
+
+.neon-button::after {
+  content: "";
+  position: absolute;
+  inset: -3px;
+  border-radius: inherit;
+  background: transparent;
+  z-index: -1;
+  box-shadow: 0 0 15px 2px rgba(216, 22, 113, 0.6);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.neon-button:hover::after {
+  opacity: 1;
+}
+
+.neon-button-blue {
+  position: relative;
+  overflow: visible;
+}
+
+.neon-button-blue::after {
+  content: "";
+  position: absolute;
+  inset: -3px;
+  border-radius: inherit;
+  background: transparent;
+  z-index: -1;
+  box-shadow: 0 0 15px 2px rgba(22, 178, 228, 0.6);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.neon-button-blue:hover::after {
+  opacity: 1;
+}
+
+/* New glow effects without horizontal lines */
+.neon-glow-blue {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: 0 0 15px 2px rgba(22, 178, 228, 0.4);
+  opacity: 0.6;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.neon-glow-pink {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: 0 0 15px 2px rgba(216, 22, 113, 0.4);
+  opacity: 0.6;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.neon-glow-subtle {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: 0 0 10px 1px rgba(119, 100, 171, 0.3);
+  opacity: 0.4;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Grid pattern background */
+.bg-grid-pattern {
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
